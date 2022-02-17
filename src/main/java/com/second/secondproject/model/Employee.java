@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @Data
 @Entity
-// if we didn't specify table annotation, JPS will name the table as the class name
+// if we didn't specify table annotation, JPA will name the table as the class name
 @Table(name="employees")
 public class Employee {
     // @Id will specify the primary key of the class entity

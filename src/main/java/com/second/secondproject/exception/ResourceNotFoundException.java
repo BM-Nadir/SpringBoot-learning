@@ -4,7 +4,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ResponseStatus(value = HttpStatus.NOT_FOUND)
-public class ResourceNotFound extends RuntimeException{
+public class ResourceNotFoundException extends RuntimeException{
     private static final long serialVersionUID = 1L;
     private final String resourceName;
     private final String fieldName;
@@ -20,7 +20,7 @@ public class ResourceNotFound extends RuntimeException{
         return fieldValue;
     }
 
-    public ResourceNotFound(String message, String resourceName, String fieldName, Object fieldValue) {
+    public ResourceNotFoundException(String resourceName, String fieldName, Object fieldValue) {
         // first "%s" will replace "resourceName" and the others too...
         super(String.format("%s not found with %s: %s", resourceName, fieldName, fieldValue));
         this.resourceName = resourceName;
